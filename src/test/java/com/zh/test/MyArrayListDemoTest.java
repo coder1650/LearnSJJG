@@ -8,6 +8,7 @@ import java.util.List;
 import org.junit.Test;
 
 import com.zh.collections.MyArrayListDemo;
+import com.zh.collections.MyStackByArray;
 
 public class MyArrayListDemoTest {
 	
@@ -42,10 +43,12 @@ public class MyArrayListDemoTest {
 		List<Integer> list = new ArrayList<>();
 		
 		list.addAll(Arrays.asList(6,5,1,4,2));
-		removeEventVer1(list);
-		for (Integer integer : list) {
-			System.out.println(integer);
-		}
+		list.clear();
+		System.out.println(list);
+//		removeEventVer1(list);
+//		for (Integer integer : list) {
+//			System.out.println(integer);
+//		}
 	}
 	
 	@Test
@@ -53,6 +56,18 @@ public class MyArrayListDemoTest {
 		String[] s = new String[]{"a","b","c","d",null};
 		System.arraycopy(s, 1, s, 2, 3);
 		System.out.println(s);
+	}
+	
+	@Test
+	public void test06(){
+		MyStackByArray<String> stack = new MyStackByArray<>();
+		stack.add("a");
+		stack.add("b");
+		stack.add("c");
+		System.out.println(stack.top());
+		System.out.println(stack.top());
+		System.out.println(stack.top());
+		System.out.println(stack.top());
 	}
 	
 	public int getSum(int n){
